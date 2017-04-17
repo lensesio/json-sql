@@ -17,9 +17,9 @@ apply plugin: 'io.codearte.nexus-staging'
 apply plugin: 'net.researchgate.release'
 
 allprojects {
-    group = 'com.datamountaineer'
+    group = 'com.landoop'
     version = version
-    description = "Allows to run KCQL over JSON"
+    description = "Allows to run SQL over JSON"
 
     apply plugin: 'scala'
     apply plugin: 'maven'
