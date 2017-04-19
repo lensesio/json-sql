@@ -33,13 +33,13 @@ allprojects {
         scalaCheck = '1.11.1'
         scalaTest = '2.2.6'
         junitVersion = '4.12'
-        calciteVersion = "1.12.0"
         kafkaVersion = '0.10.2.0'
         scalaLoggingVersion = '2.1.2'
         mockitoVersion = '2.7.13'
         slf4jVersion = "1.7.7"
         jacksonVersion = "2.8.5"
         json4sVersion = "3.3.0"
+        sqlCore="1.0"
     }
 
     repositories {
@@ -58,7 +58,7 @@ allprojects {
         compile "org.scala-lang:scala-library:$scala"
         compile "com.typesafe.scala-logging:scala-logging-slf4j_$scalaMajorVersion:$scalaLoggingVersion"
 
-        compile ("org.apache.calcite:calcite-core:$calciteVersion")
+        compile ("com.landoop:sql-core_$scalaMajorVersion:$sqlCore")
 
         compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
         compile "com.fasterxml.jackson.module:jackson-module-scala_$scalaMajorVersion:$jacksonVersion"
