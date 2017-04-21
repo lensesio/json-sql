@@ -17,6 +17,7 @@ package com.landoop.json.sql
 
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.node._
+import com.landoop.sql.{Field, SqlContext}
 import org.apache.calcite.sql.SqlSelect
 
 import scala.collection.JavaConversions._
