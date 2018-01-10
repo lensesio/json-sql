@@ -29,7 +29,7 @@ allprojects {
 
     ext {
         scalaMajorVersion = '2.11'
-        scala = '2.11.7'
+        scala = '2.11.11'
         scalaCheck = '1.11.1'
         scalaTest = '2.2.6'
         junitVersion = '4.12'
