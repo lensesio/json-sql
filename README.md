@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Landoop/json-sql.svg?branch=master)](https://travis-ci.org/Landoop/json-sql)
+
 # json-sql
 This is a small utility library allowing you to translate the shape of a JSON document.
 Let's say we have the following json (A description of a Pizza):
