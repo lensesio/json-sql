@@ -145,8 +145,12 @@ SELECT vegan  withstructure
 
 //rename and only select nested fields
 SELECT ingredients.name as fieldName, ingredients.sugar as fieldSugar, ingredients.*  withstructure
+```
 
-
+* selecting a nested object
+```
+//select the nested address object on a person
+SELECT address
 ```
 
 ## Release Notes
@@ -155,6 +159,11 @@ SELECT ingredients.name as fieldName, ingredients.sugar as fieldSugar, ingredien
 **0.1 (2017-04-17)**
 
 * first release
+
+**1.0.2**
+
+* Support added for selecting nested JSON objects.  This can be useful for inserting user defined 
+types (UDTs) in Cassandra, for example.
 
 ### Building
 

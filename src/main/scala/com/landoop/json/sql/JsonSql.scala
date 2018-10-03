@@ -87,6 +87,7 @@ object JsonSql {
           case l: LongNode => target.put(nodeName, l.longValue())
           case s: ShortNode => target.put(nodeName, s.shortValue())
           case t: TextNode => target.put(nodeName, t.textValue())
+          case o: ObjectNode => target.set(nodeName, o)
           case _: NullNode =>
           case _: MissingNode =>
           case other => throw new IllegalArgumentException(s"Invalid path $select")
