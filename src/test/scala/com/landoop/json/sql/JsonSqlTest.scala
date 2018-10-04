@@ -2,8 +2,8 @@ package com.landoop.json.sql
 
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.node.{ObjectNode, TextNode}
+import com.landoop.json.sql.JsonSql._
 import org.scalatest.{Matchers, WordSpec}
-import JsonSql._
 
 class JsonSqlTest extends WordSpec with Matchers {
 
@@ -176,6 +176,14 @@ class JsonSqlTest extends WordSpec with Matchers {
       case class LocalSimpleAddress(Z: String, street: String, city: String, country: String, S: String)
       val expected = LocalSimpleAddress(address.zip, address.street, address.city, address.country, address.state)
 
+      compare(actual, expected)
+    }
+
+    "handle 'SELECT address' from record" in {
+      val address = Address(Street("Rock St"), Some(Street("Sunset Boulevard")), "MtV", "CA", "94041", "USA")
+      val person = Person("Rick", address)
+      val actual = JacksonJson.asJson(person).sql("SELECT address")
+      val expected = JacksonJson.asJson("{\"address\":{\"street\":{\"name\":\"Rock St\"},\"street2\":{\"name\":\"Sunset Boulevard\"},\"city\":\"MtV\",\"state\":\"CA\",\"zip\":\"94041\",\"country\":\"USA\"}}")
       compare(actual, expected)
     }
   }
