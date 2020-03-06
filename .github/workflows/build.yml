@@ -16,7 +16,7 @@ jobs:
     - name: Download gradle
       run: ./gradlew --version
     - name: Run tests
-      run: ./gradlew tests
+      run: ./gradlew test
     - name: Run compile
       run: ./gradlew compile
     - name: Run build
