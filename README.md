@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Landoop/json-sql.svg?branch=master)](https://travis-ci.org/Landoop/json-sql)
+![Gradle build](https://github.com/lensesio/json-sql/workflows/Gradle%20build/badge.svg)
 
 # json-sql
 This is a small utility library allowing you to translate the shape of a JSON document.
@@ -155,6 +155,9 @@ SELECT address
 
 ## Release Notes
 
+**2.0 (2020-01-01)**
+
+* Update to scala 2.12
 
 **0.1 (2017-04-17)**
 
