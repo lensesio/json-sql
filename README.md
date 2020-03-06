@@ -170,7 +170,7 @@ types (UDTs) in Cassandra, for example.
 
 ### Building
 
-***Requires gradle 3.4.1 to build.***
+***Requires gradle 5.0 to build.***
 
 To build
 
