@@ -1,4 +1,4 @@
-![Github Action](https://github.com/lensesio/json-sql/workflows/Gradle%20build/badge.svg)
+![Actions Status](https://github.com/lensesio/json-sql/workflows/CI/badge.svg)
 
 # json-sql
 This is a small utility library allowing you to translate the shape of a JSON document.
