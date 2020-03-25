@@ -1,3 +1,4 @@
+![Actions Status](https://github.com/lensesio/json-sql/workflows/CI/badge.svg)
 ![Gradle build](https://github.com/lensesio/json-sql/workflows/Gradle%20build/badge.svg)
 
 # json-sql
