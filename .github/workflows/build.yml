@@ -19,7 +19,7 @@ jobs:
         mkdir -vp /opt && cd /opt
         git clone https://github.com/lensesio/sql-core.git
         cd /opt/sql-core
-        git checkout update/scala_12
+        git checkout master
         ./gradlew clean build install
         cd "${OLDPWD}"
     - name: Download gradle
