@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Landoop/json-sql.svg?branch=master)](https://travis-ci.org/Landoop/json-sql)
+![Actions Status](https://github.com/lensesio/json-sql/workflows/CI/badge.svg)
 
 # json-sql
 This is a small utility library allowing you to translate the shape of a JSON document.
@@ -155,6 +155,9 @@ SELECT address
 
 ## Release Notes
 
+**2.0 (2020-01-01)**
+
+* Update to scala 2.12
 
 **0.1 (2017-04-17)**
 
@@ -167,7 +170,7 @@ types (UDTs) in Cassandra, for example.
 
 ### Building
 
-***Requires gradle 3.4.1 to build.***
+***Requires gradle 5.0 to build.***
 
 To build
 
