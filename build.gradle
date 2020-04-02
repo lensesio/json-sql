@@ -37,7 +37,7 @@ allprojects {
         scalaLoggingVersion = '3.9.2'
         mockitoVersion = '2.12.0'
         slf4jVersion = "1.7.7"
-        jacksonVersion = "2.9.1"
+        jacksonVersion = "2.10.1"
         json4sVersion = "3.6.7"
         sqlCore="2.0"
     }
