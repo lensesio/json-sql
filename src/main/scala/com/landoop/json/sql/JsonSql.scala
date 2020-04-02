@@ -15,16 +15,13 @@
  */
 package com.landoop.json.sql
 
-import java.util
-
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.node._
 import com.landoop.sql.{Field, SqlContext}
 import org.apache.calcite.sql.SqlSelect
 
 import scala.collection.JavaConverters._
-import scala.collection.immutable
-import scala.collection.mutable.{ArrayBuffer, Map => MutableMap}
+import scala.collection.mutable.ArrayBuffer
 import scala.util.{Failure, Success, Try}
 
 object JsonSql {
@@ -90,7 +87,7 @@ object JsonSql {
           case l: LongNode => target.put(nodeName, l.longValue())
           case s: ShortNode => target.put(nodeName, s.shortValue())
           case t: TextNode => target.put(nodeName, t.textValue())
-          case o: ObjectNode => target.set(nodeName, o)
+          case o: ObjectNode => target.set(nodeName, o).asInstanceOf[ObjectNode]
           case _: NullNode =>
           case _: MissingNode =>
           case other => throw new IllegalArgumentException(s"Invalid path $select")
@@ -213,7 +210,7 @@ object JsonSql {
     if (fields.nonEmpty) {
       fields.foreach {
         case Right(parent) => Option(node.get(parent)).foreach { node =>
-          newNode.set(parent, from(node, parents :+ parent))
+          newNode.set(parent, from(node, parents :+ parent)).asInstanceOf[JsonNode]
         }
         case Left(parent) if parent.name == "*" =>
           node.fieldNames().asScala.withFilter { f =>
@@ -221,17 +218,23 @@ object JsonSql {
               case Left(field) if field.name == f => true
               case _ => false
             }
-          }.foreach { field => newNode.set(field, from(node.get(field), parents :+ parent.name)) }
+          }.foreach { field =>
+            newNode.set(field, from(node.get(field), parents :+ parent.name))
+              .asInstanceOf[JsonNode]
+          }
 
         case Left(parent) => Option(node.get(parent.name)).foreach { node =>
-          newNode.set(parent.alias, from(node, parents :+ parent.name))
+          newNode.set(parent.alias, from(node, parents :+ parent.name)).asInstanceOf[JsonNode]
         }
       }
     }
     else {
       node.fieldNames()
         .asScala.foreach { field =>
-          newNode.set(field, from(node.get(field), parents :+ field))
+          newNode.set(
+            field,
+            from(node.get(field), parents :+ field)
+          ).asInstanceOf[JsonNode]
         }
     }
     newNode
