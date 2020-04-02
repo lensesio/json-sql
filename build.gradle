@@ -6,7 +6,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.github.maiflai:gradle-scalatest:0.19'
+        classpath 'com.github.maiflai:gradle-scalatest:0.25'
         classpath 'io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.9.0'
         classpath 'net.researchgate:gradle-release:2.8.1'
     }
